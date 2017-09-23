@@ -1,0 +1,41 @@
+{
+    "name": "litgroup/transaction-doctrine-orm-bridge",
+    "description": "The bridge between the library 'litgroup/transaction' and Doctrine ORM.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Roman Shamritskiy",
+            "email": "roman@litgroup.ru"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "LitGroup\\Transaction\\Bridge\\DoctrineORM\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\LitGroup\\Transaction\\Bridge\\DoctrineORM\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "vendor/bin/phpunit --configuration ."
+        ],
+        "test-coverage-html": [
+            "phpdbg -qrr vendor/bin/phpunit --configuration=. --coverage-html=build/coverage"
+        ],
+        "test-ci": [
+            "phpdbg -qrr vendor/bin/phpunit --configuration=. --colors=never --coverage-text"
+        ]
+    },
+    "require": {
+        "php": "^7.1",
+        "litgroup/transaction": "^0.2.0",
+        "doctrine/orm": "^2.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.3"
+    }
+}
